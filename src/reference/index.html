@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KaraokeGoGo</title>
+
+      <!-- Add iOS Chrome detection right here -->
+      <script>
+        // iOS Chrome detection
+        window.isIOSChrome = /CriOS/i.test(navigator.userAgent) && /iP(hone|od|ad)/i.test(navigator.userAgent);
+    
+        // Apply iOS Chrome specific fixes
+        if (window.isIOSChrome) {
+          // Add a class to the body for targeting with CSS
+          document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('ios-chrome');
+          });
+        }
+        </script>
+        
+        <!-- Rest of your head content continues -->
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fixed-nav.css">
+    <!-- Google Fonts - Add a modern font like Poppins or Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome - matching version from original app -->
+    <link 
+        rel="preload" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        as="style" 
+        crossorigin="anonymous"
+    />
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        crossorigin="anonymous"
+    />
+
+    <style>
+       /* iOS Chrome specific fixes */
+.ios-chrome .app-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/stage.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* Use more specific gradients that will work in iOS Chrome */
+.ios-chrome .logo {
+  /* Rainbow gradient with fallback */
+  background-image: linear-gradient(to right, #ff9900, #ff00ff, #00ffff) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  /* Add backup shadow for better visibility */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+.ios-chrome .beta-tag {
+  /* Blue gradient with fallback */
+  background-image: linear-gradient(to right, #ff00cc, #00ccff) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Fix for navigation issues */
+.ios-chrome .close-button,
+.ios-chrome .panel-handle {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure text stays visible during animation */
+.ios-chrome * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* iOS Chrome specific beta tag border fix */
+.ios-chrome .beta-tag {
+  /* Blue gradient with fallback */
+  background-image: linear-gradient(to right, #ff00cc, #00ccff) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  /* Make border more visible for iOS Chrome */
+  border: 1px solid rgba(255,255,255,0.7) !important; /* Brighter border */
+  box-shadow: 0 0 3px rgba(255,255,255,0.3) !important; /* Add glow */
+}
+
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <h1 class="logo">
+                    karaokeGoGo
+                    <span class="beta-tag">beta</span>
+                </h1>
+            </div>
+            <p class="tagline">Pour your soul. Remix your world.</p>
+        </header>
+         
+        <main class="main-content">
+            <!-- Empty container for proper spacing -->
+            <div class="main-content-spacer"></div>
+        </main>
+         
+        <nav class="main-navigation">
+            <div class="nav-buttons">
+                <a href="karaoke.html" class="nav-button karaoke-btn" style="border: 2px solid #ff99ff;">
+                    <div class="glow"></div>
+                    <div class="btn-icon"><i class="fas fa-microphone"></i></div>
+                    <div class="btn-text">Karaoke</div>
+                </a>
+                 
+                <a href="my-mix.html" class="nav-button my-mix-btn" style="border: 2px solid #99ccff;">
+                    <div class="glow"></div>
+                    <div class="btn-icon"><i class="fas fa-music"></i></div>
+                    <div class="btn-text">My Mix</div>
+                </a>
+                 
+                <a href="top-charts.html" class="nav-button top-charts-btn" style="border: 2px solid #ffcc99;">
+                    <div class="glow"></div>
+                    <div class="btn-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="btn-text">Top Charts</div>
+                </a>
+                 
+                <a href="feed.html" class="nav-button feed-btn" style="border: 2px solid #99ff99;">
+                    <div class="glow"></div>
+                    <div class="btn-icon"><i class="fas fa-rss"></i></div>
+                    <div class="btn-text">Feed</div>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
