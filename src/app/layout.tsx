@@ -36,6 +36,7 @@ export default function RootLayout({
         />
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/fixed-nav.css" />
+        <link rel="stylesheet" href="/css/karaoke.css" />
         <link rel="stylesheet" href="/css/panel-animations.css" />
         <Script id="ios-chrome-detection" strategy="beforeInteractive">
           {`

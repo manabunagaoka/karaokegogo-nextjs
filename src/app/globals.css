@@ -1,54 +1,135 @@
-/* Import existing CSS files in the exact order needed */
-@import url('/css/styles.css');
-@import url('/css/fixed-nav.css');
-
-/* iOS Chrome specific fixes */
-.ios-chrome .app-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/stage.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
+/* Basic styling for the app */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Use more specific gradients that will work in iOS Chrome */
-.ios-chrome .logo {
-  /* Rainbow gradient with fallback */
-  background-image: linear-gradient(to right, #ff9900, #ff00ff, #00ffff) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-  /* Add backup shadow for better visibility */
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-.ios-chrome .beta-tag {
-  /* Blue gradient with fallback */
-  background-image: linear-gradient(to right, #ff00cc, #00ccff) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
+/* Home page styling */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/stage.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-/* Fix for navigation issues */
-.ios-chrome .close-button,
-.ios-chrome .panel-handle {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+.app-header {
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-/* Ensure text stays visible during animation */
-.ios-chrome * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.logo-container {
+  margin-bottom: 1rem;
 }
 
-/* iOS Chrome specific beta tag border fix */
-.ios-chrome .beta-tag {
-  /* Blue gradient with fallback */
-  background-image: linear-gradient(to right, #ff00cc, #00ccff) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-  /* Make border more visible for iOS Chrome */
-  border: 1px solid rgba(255,255,255,0.7) !important; /* Brighter border */
-  box-shadow: 0 0 3px rgba(255,255,255,0.3) !important; /* Add glow */
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff9900, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.beta-tag {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, #ff00cc, #00ccff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  vertical-align: super;
+  margin-left: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.main-content {
+  flex: 1;
+}
+
+.main-navigation {
+  padding: 2rem 1rem;
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.btn-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-text {
+  font-weight: 500;
+}
+
+/* Button colors */
+.karaoke-btn .btn-icon { color: #ff66ff; }
+.my-mix-btn .btn-icon { color: #66ccff; }
+.top-charts-btn .btn-icon { color: #ffcc66; }
+.feed-btn .btn-icon { color: #66ff66; }
+
+/* Glow effect */
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-button:hover .glow {
+  opacity: 0.6;
+}
+
+.karaoke-btn .glow { background: radial-gradient(circle, rgba(255,102,255,0.5) 0%, rgba(255,255,255,0) 70%); }
+.my-mix-btn .glow { background: radial-gradient(circle, rgba(102,204,255,0.5) 0%, rgba(255,255,255,0) 70%); }
+.top-charts-btn .glow { background: radial-gradient(circle, rgba(255,204,102,0.5) 0%, rgba(255,255,255,0) 70%); }
+.feed-btn .glow { background: radial-gradient(circle, rgba(102,255,102,0.5) 0%, rgba(255,255,255,0) 70%); }
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .nav-buttons {
+    grid-template-columns: 1fr;
+  }
 }
