@@ -19,28 +19,28 @@ export default function Home() {
        
       <nav className="main-navigation">
         <div className="nav-buttons">
-          <Link href="/karaoke" className="nav-button karaoke-btn" style={{ border: '2px solid #ff99ff' }}>
+          <Link href="/karaoke" className="nav-button karaoke-btn">
             <div className="glow"></div>
-            <div className="btn-icon" style={{ color: '#ff66ff' }}><i className="fas fa-microphone"></i></div>
-            <div className="btn-text" style={{ color: '#333', fontWeight: '500' }}>Karaoke</div>
+            <div className="btn-icon"><i className="fas fa-microphone"></i></div>
+            <div className="btn-text">Karaoke</div>
           </Link>
            
-          <Link href="/my-mix" className="nav-button my-mix-btn" style={{ border: '2px solid #99ccff' }}>
+          <Link href="/my-mix" className="nav-button my-mix-btn">
             <div className="glow"></div>
-            <div className="btn-icon" style={{ color: '#66ccff' }}><i className="fas fa-music"></i></div>
-            <div className="btn-text" style={{ color: '#333', fontWeight: '500' }}>My Mix</div>
+            <div className="btn-icon"><i className="fas fa-music"></i></div>
+            <div className="btn-text">My Mix</div>
           </Link>
            
-          <Link href="/top-charts" className="nav-button top-charts-btn" style={{ border: '2px solid #ffcc99' }}>
+          <Link href="/top-charts" className="nav-button top-charts-btn">
             <div className="glow"></div>
-            <div className="btn-icon" style={{ color: '#ffcc66' }}><i className="fas fa-chart-line"></i></div>
-            <div className="btn-text" style={{ color: '#333', fontWeight: '500' }}>Top Charts</div>
+            <div className="btn-icon"><i className="fas fa-chart-line"></i></div>
+            <div className="btn-text">Top Charts</div>
           </Link>
            
-          <Link href="/feed" className="nav-button feed-btn" style={{ border: '2px solid #99ff99' }}>
+          <Link href="/feed" className="nav-button feed-btn">
             <div className="glow"></div>
-            <div className="btn-icon" style={{ color: '#66ff66' }}><i className="fas fa-rss"></i></div>
-            <div className="btn-text" style={{ color: '#333', fontWeight: '500' }}>Feed</div>
+            <div className="btn-icon"><i className="fas fa-rss"></i></div>
+            <div className="btn-text">Feed</div>
           </Link>
         </div>
       </nav>
